@@ -8,6 +8,8 @@ interface FileRepository {
 
     fun updateInfo(update: String)
 
+    fun getInfo(): List<String>
+
     fun addFolder()
 
     fun addFileToFolder()

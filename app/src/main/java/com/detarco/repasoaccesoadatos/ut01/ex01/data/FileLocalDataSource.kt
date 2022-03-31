@@ -35,6 +35,11 @@ class FileLocalDataSource(
         )
     }
 
+    //Read info from File
+    override fun getInfo(): List<String>{
+        return getFile(REPASOFILE).readLines()
+    }
+
     //Create Folders
     override fun addFolder() {
         val oneMoreFolder = File(
@@ -72,8 +77,8 @@ class FileLocalDataSource(
     override fun externalFile() {
         val externalFile = File(
             context.getExternalFilesDir(
-                "ExternalFolder"
-            ), "ExternalFileInFolder.txt"
+                "path_directory"
+            ), "external_file_in_folder.txt"
         )
         externalFile.writeText("External File")
     }
